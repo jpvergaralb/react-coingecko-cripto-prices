@@ -10,10 +10,10 @@ function TableCoins({ coins, search }) {
 
   return (
     <div className="mt-1 p-2 text-xs md:text-sm lg:text-base">
-      <table className="mx-auto min-w-[70%] table-auto border border-slate-500 max-w-[80%]">
+      <table className="mx-auto min-w-[70%] max-w-[80%] table-auto border border-slate-500">
         <thead>
           <tr className="border border-slate-500 ">
-            <th >#</th>
+            <th>#</th>
             <th>Name</th>
             <th>
               Price (<code>USD</code>)

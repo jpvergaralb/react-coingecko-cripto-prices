@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 function App() {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
-  const [currentPage, setCurrentPage] = useState(1)
+  const [currentPage, setCurrentPage] = useState(1);
 
   const getData = async () => {
     const response = await axios.get(
@@ -24,12 +24,20 @@ function App() {
   }, [currentPage]);
 
   return (
-    <div className="h-screen bg-gh-blue text-slate-200 overflow-y-auto flex flex-col">
+    <div className="flex h-screen flex-col overflow-y-auto bg-gh-blue text-slate-200">
       <Navbar />
-      <InputSearch setSearch={setSearch}/>
-      <PrevNext quantity={coins.length} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
-      <TableCoins coins={coins} search={search}/>
-      <PrevNext quantity={coins.length} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+      <InputSearch setSearch={setSearch} />
+      <PrevNext
+        quantity={coins.length}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
+      <TableCoins coins={coins} search={search} />
+      <PrevNext
+        quantity={coins.length}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
       <Footer />
     </div>
   );

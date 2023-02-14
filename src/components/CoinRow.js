@@ -14,22 +14,29 @@ function CoinRow({ coin }) {
           className="m-2 object-contain"
         />{" "}
         <code className="ml-2 mt-2"> {coin.name} </code>{" "}
-        <h3 className="ml-2 mt-2  text-slate-500">
-          {" "}
-          {coin.symbol}{" "}
-        </h3>{" "}
+        <h3 className="ml-2 mt-2  text-slate-500"> {coin.symbol} </h3>{" "}
       </td>
       <td className="text-center">
         {" "}
-        <code> {coin.current_price.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 1 })} </code> 
+        <code>
+          {" "}
+          {coin.current_price.toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 1,
+          })}{" "}
+        </code>
       </td>
       <td className="text-center">
         {" "}
         <code>
           {" "}
           {coin.total_volume > 1_000_000
-            ? `${(coin.total_volume/1_000_000)
-                .toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 1 })} MM`
+            ? `${(coin.total_volume / 1_000_000).toLocaleString("en-US", {
+                style: "currency",
+                currency: "USD",
+                maximumFractionDigits: 1,
+              })} MM`
             : coin.total_volume}{" "}
         </code>
       </td>
@@ -41,7 +48,14 @@ function CoinRow({ coin }) {
         }`}
       >
         {" "}
-        <code> {coin.price_change_percentage_24h.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 1 })}</code>
+        <code>
+          {" "}
+          {coin.price_change_percentage_24h.toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 1,
+          })}
+        </code>
       </td>
     </tr>
   );
