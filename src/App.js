@@ -24,7 +24,7 @@ function App() {
   }, [currentPage]);
 
   return (
-    <div className="h-screen bg-gh-blue text-slate-200 overflow-y-auto">
+    <div className="h-screen bg-gh-blue text-slate-200 overflow-y-auto flex flex-col">
       <Navbar />
       <InputSearch setSearch={setSearch}/>
       <PrevNext quantity={coins.length} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
